@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/pomodoro-timer/",
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -11,4 +11,3 @@ export default defineConfig({
     },
   },
 });
-
