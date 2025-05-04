@@ -23,6 +23,7 @@ const App = () => {
 
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
+  const [memeUrl, setMemeUrl] = useState<string | null>(null);
 
   const handleAddTask = (task: Task) => {
     setTasks((prev) => [...prev, task]);
@@ -31,7 +32,18 @@ const App = () => {
   const changeModeTo = (mode: number) => {
     setMode(mode);
     setIsStarted(false);
-    setTimerText(timerText); // This line might be redundant
+    setTimerText(timerText);
+    setMemeUrl(null); // reset meme when mode is changed
+  };
+
+  const fetchMeme = async () => {
+    try {
+      const res = await fetch("https://meme-api.com/gimme");
+      const data = await res.json();
+      setMemeUrl(data.url);
+    } catch (err) {
+      console.error("Error fetching meme:", err);
+    }
   };
 
   useEffect(() => {
@@ -69,13 +81,23 @@ const App = () => {
           </Button>
         </Card>
 
-        <Timer />
+        <Timer onTimerEnd={fetchMeme} />
 
         <Card className="flex-col items-center">
           <p className="font-semibold">
             {mode === MODE.POMO ? "Time to Focus!" : "Time for Break!"}
           </p>
         </Card>
+
+        {memeUrl && (
+          <Card className="flex justify-center items-center p-4">
+            <img
+              src={memeUrl}
+              alt="Meme"
+              className="rounded-xl max-w-full h-auto"
+            />
+          </Card>
+        )}
       </section>
 
       <Toaster />
