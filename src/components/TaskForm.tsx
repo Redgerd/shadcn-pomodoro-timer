@@ -30,23 +30,23 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 bg-white text-black p-4 rounded"
+      className="flex flex-col gap-2 bg-neutral-900 text-neutral-100 p-4 rounded-lg border border-neutral-800 shadow-sm"
     >
       <input
-        className="border rounded p-2"
+        className="border border-neutral-700 bg-neutral-800 text-neutral-100 placeholder-neutral-500 rounded p-2 focus:outline-none focus:ring-2 focus:ring-stone-400"
         type="text"
         placeholder="Task name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <textarea
-        className="border rounded p-2"
+        className="border border-neutral-700 bg-neutral-800 text-neutral-100 placeholder-neutral-500 rounded p-2 focus:outline-none focus:ring-2 focus:ring-stone-400"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
       <select
-        className="border rounded p-2"
+        className="border border-neutral-700 bg-neutral-800 text-neutral-100 rounded p-2 focus:outline-none focus:ring-2 focus:ring-stone-400"
         value={pomodoros}
         onChange={(e) => setPomodoros(Number(e.target.value))}
       >
@@ -61,6 +61,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask }) => {
       </div>
     </form>
   );
+  
 };
 
 export default TaskForm;
