@@ -9,6 +9,7 @@ import { Toaster } from "./components/ui/toaster";
 import Loader from "./components/ui/loader";
 import TaskForm from "@/components/TaskForm";
 import TaskList from "@/components/TaskList";
+import MemeViewer from "@/components/MemeViewer";
 
 // Define the Task interface here or import from a separate file
 interface Task {
@@ -79,7 +80,7 @@ const App = () => {
       </section>
 
       <Toaster />
-
+      <MemeViewer />
       <section className="w-11/12 max-w-screen-md flex flex-col gap-4">
         <TaskForm onAddTask={handleAddTask} />
         <TaskList tasks={tasks} />

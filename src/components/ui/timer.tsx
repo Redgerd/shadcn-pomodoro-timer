@@ -40,11 +40,11 @@ const Timer = () => {
   }, [mode]);
 
   return (
-    <Card className='flex-col items-center space-y-4'>
+    <Card className="flex-col items-center space-y-4">
       <CountdownTimer callbackFn={changeCountDown} />
-      <Card className='w-full'>
+      <Card className="w-full">
         <Button
-          className='text-xl uppercase font-bold px-6 py-4'
+          className="text-xl uppercase font-bold px-6 py-4"
           variant={"secondary"}
           onClick={() => {
             toggleTimer();
