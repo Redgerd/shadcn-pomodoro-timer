@@ -26,13 +26,4 @@
 | Styling     | Tailwind CSS         |
 | Framework   | React / Next.js      |
 | Language    | TypeScript           |
-| Extras      | Giphy API (optional) |
-
-## 🔮 Future Features
-
-* ✅ Meme API integration (Giphy, Reddit, etc.)
-* ✅ Timer state persistence in local storage
-* ✅ Sound alerts
-* ✅ Mobile responsiveness & PWA install
-* ✅ Progress tracking & streak counter
 
