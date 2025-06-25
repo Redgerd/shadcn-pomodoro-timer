@@ -18,7 +18,7 @@
 - 🔔 (Optional) Sound alerts on transitions
 - 💻 Built with TypeScript & React (or Next.js)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer       | Tool/Library         |
 |-------------|----------------------|
